@@ -3,8 +3,9 @@ import { LoginFormComponent } from "../Components/LoginFormComponent/LoginFormCo
 
 export const LoginPage=()=>{
     return(
-        <>
+        
         <LoginFormComponent/>
-        </>
+    
+        
     )
 }
