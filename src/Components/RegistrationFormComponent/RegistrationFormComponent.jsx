@@ -30,16 +30,29 @@ export const RegistrationFormComponent = ()=>{
                     <label htmlFor="Email" className="form-label">Дата рождения</label>
                     </div>
                     <div className="form__group">
-                    <div className="form__input--birthday">
-                        <input type="text" value={day.value} onChange={day.onChange} className="form-input" placeholder='Число' />
-                    </div>
-                    <div className="form__input--birthday">
-                        <input type="text" value={month.value} onChange={month.onChange} className="form-input" placeholder='Месяц' />
-                    </div>
-                    <div className="form__input--birthday">
-                        <input type="text" value={month.value} onChange={month.onChange} className="form-input" placeholder='Год' />
-                    </div>
-                   
+                     <div className="form__select">
+                        <select name="day" value={day.value} onChange={day.onChange}>
+                        <option value="День">День</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                         </select>
+                        </div>   
+                        <div className="form__select">
+                        <select name="month" value={month.value} onChange={month.onChange}>
+                        <option value="Месяц">Месяц</option>
+                        <option value="Январь">Январь</option>
+                        <option value="Февраль">Февраль</option>
+                         </select>
+                        </div>   
+
+                        <div className="form__select">
+                        <select name="year" value={year.value} onChange={year.onChange}>
+                        <option value="Год">Год</option>
+                        <option value="1997">1997</option>
+                        <option value="1998">1998</option>
+                        </select>
+                    </div>   
+                  
                     </div>
                     <div className="form__label">
                     <label htmlFor="Email" className="form-label">Логин</label>
