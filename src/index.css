@@ -5,11 +5,16 @@
 input{
     outline: none;
   }
+  a{
+    text-decoration: none;
+    
+    
+}
 
 .container-auth{
     display: flex;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 .form__wrapper{
@@ -50,5 +55,24 @@ button:hover{
 .form__redirect{
     margin-top: 15px;
     text-align: center;
+    
+    
+}
+.form__link{
     font-size: 20px;
+    color: #0000FF;
+}
+
+.form__group{
+    display: flex;
+    align-items: center;
+}
+.form__group> div{
+    margin-left: 20px;
+}
+
+.form__input--birthday>input{
+    width: 100px;
+    text-align: center;
+
 }

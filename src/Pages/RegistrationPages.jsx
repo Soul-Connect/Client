@@ -1,9 +1,8 @@
 import  React from "react";
+import { RegistrationFormComponent } from "../Components/RegistrationFormComponent/RegistrationFormComponent";
 
 export const RegustrationPage= ()=>{
     return(
-        <>
-        <h1>Registration</h1>
-        </>
+      <RegistrationFormComponent/>
     )
 }
