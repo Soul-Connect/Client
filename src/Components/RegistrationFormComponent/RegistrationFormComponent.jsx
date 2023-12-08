@@ -1,4 +1,4 @@
-import  react from 'react'
+import  react, { useState } from 'react'
 import { useInput } from '../../hooks/useInput'
 import { Link } from 'react-router-dom'
 
@@ -11,6 +11,11 @@ export const RegistrationFormComponent = ()=>{
         const login = useInput('')
         const password = useInput('')
         const confirmPassword = useInput('')
+        const [gender, setGender] = useState('')
+
+        const changeGender= (event)=>{
+            setGender(event.target.value)
+        }
   
         
 
@@ -57,13 +62,15 @@ export const RegistrationFormComponent = ()=>{
                         <div className="genders">
                             <div className="genders__items">
                                 <div className="gender__item">
-                                    <input type="radio" className="gender__radio" />
+                                    <input type="radio" value='Man' className="gender__radio" name='gender' onChange={changeGender}/>
                                     <span className="gender__text">Мужчина</span>
+                                    
                                 </div>
                                 <div className="gender__item">
-                                    <input type="radio" className="gender__radio" />
+                                    <input type="radio"  value='Wooman' className="gender__radio" name='gender' onChange={changeGender} />
                                     <span className="gender__text">Женщина</span>
                                 </div>
+                                {gender}
                             </div>
                         </div>
                     </div>
