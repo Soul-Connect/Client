@@ -51,9 +51,23 @@ export const RegistrationFormComponent = ()=>{
                         <option value="1997">1997</option>
                         <option value="1998">1998</option>
                         </select>
-                    </div>   
-                  
                     </div>
+                    </div>
+                    <div className="form__genders">
+                        <div className="genders">
+                            <div className="genders__items">
+                                <div className="gender__item">
+                                    <input type="radio" className="gender__radio" />
+                                    <span className="gender__text">Мужчина</span>
+                                </div>
+                                <div className="gender__item">
+                                    <input type="radio" className="gender__radio" />
+                                    <span className="gender__text">Женщина</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div className="form__label">
                     <label htmlFor="Email" className="form-label">Логин</label>
                     </div>

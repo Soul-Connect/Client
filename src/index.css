@@ -101,3 +101,20 @@ button:hover{
     text-align: center;
 
 }
+
+.genders__items{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.gender__radio{
+    width: 20px;
+    height: 20px;
+}
+.gender__radio:hover{
+    cursor: pointer;
+}
+.gender__text{
+    font-size: 20px;
+    margin-left: 10px;
+}
