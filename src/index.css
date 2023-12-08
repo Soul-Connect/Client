@@ -118,3 +118,9 @@ button:hover{
     font-size: 20px;
     margin-left: 10px;
 }
+
+
+.form__error{
+    color: brown;
+    margin-top: 10px;
+}
