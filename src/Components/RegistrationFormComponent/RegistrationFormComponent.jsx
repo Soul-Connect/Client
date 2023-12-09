@@ -14,20 +14,25 @@ export const RegistrationFormComponent = ()=>{
         const confirmPassword = useInput('')
         const [gender, setGender] = useState('Man')
 
-        const changeGender= (event)=>{
+        const changeHandler= (event)=>{
             setGender(event.target.value)
+
         }
         const {
             register,
             formState: {errors},
             handleSubmit,
-            watch
+            watch,
+            reset
             
         } =  useForm()
   
-        const onSubmit=( data)=>{
-              
-                console.log(JSON.stringify(data))
+        const onSubmit=(data)=>{     
+               let str = JSON.stringify(data)
+                let jsonData =  JSON.parse(str)
+                console.log(str)
+                console.log(jsonData)
+                reset()
         }
 
 
