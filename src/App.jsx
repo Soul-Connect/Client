@@ -1,10 +1,10 @@
 import React from 'react'
 import {  Route, Routes } from 'react-router-dom'
-import { AutchLayout } from './Components/Layouts/AuthLayout/AuthLayout'
-import { Mainlayout } from './Components/Layouts/MainLayout/Mainlayout'
+import { AutchLayout } from './components/Layouts/AuthLayout/AuthLayout'
+import { Mainlayout } from './components/Layouts/MainLayout/Mainlayout'
 import { LoginPage } from './pages/LoginPage'
 import { HomePage } from './pages/HomePage'
-import { RegustrationPage } from './Pages/RegistrationPage'
+import { RegustrationPage } from './pages/RegistrationPage'
 
 import './App.css'
 
