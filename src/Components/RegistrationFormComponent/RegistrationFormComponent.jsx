@@ -5,19 +5,11 @@ import { Link } from 'react-router-dom'
 
 
 export const RegistrationFormComponent = ()=>{
-        const name = useInput('')
-        const day = useInput('')
-        const month = useInput('')
-        const year = useInput('')
-        const login = useInput('')
-        const password = useInput('')
-        const confirmPassword = useInput('')
-        const [gender, setGender] = useState('Man')
+    
 
-        const changeHandler= (event)=>{
-            setGender(event.target.value)
+      
 
-        }
+        
         const {
             register,
             formState: {errors},
@@ -41,91 +33,9 @@ export const RegistrationFormComponent = ()=>{
                 <form action="form" className="form" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form__wrapper">
                     <div className="form__title">Регистрация</div>
-                    <div className="form__label">
-                    <label htmlFor="Email" className="form-label">Имя профиля</label>
-                    </div>
-                    <div className="form__input">
-                        <input
-                        {...register('profileName',{
-                            required: 'Поле обязательное !'
-                        })} 
-                        type="text" 
-                       // value={name.value} 
-                       // onChange={name.onChange} 
-                        className="form-input" 
-                        placeholder='Имя' 
-                        
-                        />
-                      
-                       {errors?.profileName && <p className='form__error'>{errors?.profileName.message}</p>}
-                    </div>
-                    <div className="form__label">
-                    <label htmlFor="Email" className="form-label">Дата рождения</label>
-                    </div>
-                    <div className="form__group">
-                     <div className="form__select">
-                        <select name="day" 
-                        {...register('day')} >
-                       
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                         </select>
-                        </div>   
-                        <div className="form__select">
-                        <select name="month" 
-                         {...register('month')}
-                        >
-                        <option value="Январь">Январь</option>
-                        <option value="Февраль">Февраль</option>
-                         </select>
-                        </div>   
-
-                        <div className="form__select">
-                        <select name="year"
-                         {...register('year')}
-                        >
-                        <option value="1997">1997</option>
-                        <option value="1998">1998</option>
-                        </select>
-                    </div>
-                    </div>
-                    <div className="form__genders">
-                        <div className="genders">
-                            <div className="genders__items">
-                                <div className="gender__item">
-                                    <input 
-                                    type="radio" 
-                                    value='Man' 
-                                    className="gender__radio" 
-                                    name='gender' 
-                                   // onChange={changeGender}
-                                   {...register('gender',{
-                                    required: 'Поле обязательное !'
-                                   })}
-                                    />
-                                    <span className="gender__text">Мужчина</span>
-                                    
-                                </div>
-                                <div className="gender__item">
-                                    <input 
-                                    type="radio"  
-                                    value='Wooman' 
-                                    className="gender__radio" 
-                                    name='gender' 
-                                   // onChange={changeGender} 
-                                   {...register('gender', {
-                                    required: 'Поле обязательное !'
-                                   })}
-                                    />
-                                    <span className="gender__text">Женщина</span>
-                                </div>
-                            </div>
-                            {errors?.gender && <p className='form__error'>{errors?.gender.message}</p>}
-                        </div>
-                    </div>
                     
                     <div className="form__label">
-                    <label htmlFor="Email" className="form-label">Логин</label>
+                    <label htmlFor="Login" className="form-label">Логин</label>
                     </div>
                     <div className="form__input">
                         <input 
