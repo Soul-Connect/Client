@@ -40,7 +40,7 @@ export const LoginFormComponent =()=>{
                         required: 'Поле обязательное !',
                         pattern:{
                             value: /^[а-яА-ЯёЁa-zA-Z0-9]+$/,
-                            message: 'Должны быть только буквы и цыфры !'
+                            message: 'Должны быть только буквы и цифры !'
                         }
                      })}
                      />

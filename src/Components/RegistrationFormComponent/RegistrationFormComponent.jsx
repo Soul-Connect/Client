@@ -1,11 +1,13 @@
-import  react, { useState } from 'react'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useForm} from "react-hook-form"
-import { useInput } from '../../hooks/useInput'
 import { Link } from 'react-router-dom'
-
+import { useDispatch } from 'react-redux'
+import { registration } from '../../store/autch/autchSlice'
 
 export const RegistrationFormComponent = ()=>{
-    
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
       
 
@@ -19,12 +21,21 @@ export const RegistrationFormComponent = ()=>{
             
         } =  useForm()
   
-        const onSubmit=(data)=>{     
-               let str = JSON.stringify(data)
+        const onSubmit=(data)=>{ 
+            try{
+                let str = JSON.stringify(data)
                 let jsonData =  JSON.parse(str)
+                delete jsonData.confirmPassword
+
                 console.log(str)
                 console.log(jsonData)
+                dispatch(registration(jsonData))
                 reset()
+                navigate('/')
+            }catch(err){
+                console.log(err)
+            }
+              
         }
 
 
@@ -64,7 +75,7 @@ export const RegistrationFormComponent = ()=>{
                         //onChange={password.onChange} 
                         className="form-input" 
                         placeholder='Пароль' 
-                        {...register('password',{
+                        {...register('pwd',{
                             required:'Поле обязательное !',
                             minLength:{
                                 value: 6,
@@ -73,7 +84,7 @@ export const RegistrationFormComponent = ()=>{
                         })} 
                         
                         />
-                           {errors?.password && <p className='form__error'>{errors?.password.message}</p>}
+                           {errors?.pwd && <p className='form__error'>{errors?.pwd.message}</p>}
                     </div>
                     <div className="form__label">
                     <label htmlFor="Password" className="form-label">Повторите пароль</label>
@@ -92,7 +103,7 @@ export const RegistrationFormComponent = ()=>{
                                 message: 'Минимум 6 символов !',
                                 },
                                 validate: (val) => {
-                                    if (watch('password') != val) {
+                                    if (watch('pwd') != val) {
                                         return "Пароль не совпадает !";
                                       }
                                   },  
