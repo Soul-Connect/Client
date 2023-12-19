@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { registration } from '../../store/autch/autchSlice'
 
-export const RegistrationFormComponent = ()=>{
+export const RegistrationFormComponent = ({stap})=>{
     const dispatch = useDispatch()
-    const navigate = useNavigate()
+  
 
       
 
@@ -29,9 +29,10 @@ export const RegistrationFormComponent = ()=>{
 
                 console.log(str)
                 console.log(jsonData)
-                dispatch(registration(jsonData))
+                //dispatch(registration(jsonData))
                 reset()
-                navigate('/')
+                stap(2)
+             
             }catch(err){
                 console.log(err)
             }
@@ -46,25 +47,23 @@ export const RegistrationFormComponent = ()=>{
                     <div className="form__title">Регистрация</div>
                     
                     <div className="form__label">
-                    <label htmlFor="Login" className="form-label">Логин</label>
+                    <label htmlFor="Login" className="form-label">Email</label>
                     </div>
                     <div className="form__input">
                         <input 
                         type="text" 
-                       // value={login.value} 
-                       // onChange={login.onChange} 
                         className="form-input" 
-                        placeholder='Логин' 
-                        {...register('login',{
+                        placeholder='Email' 
+                        {...register('Email',{
                             required: 'Поле обезательное !',
                             pattern:{
-                                value:/^[а-яА-ЯёЁa-zA-Z0-9]+$/,
-                                message: 'Должны быть только буквы и цыфры !'
+                                value:/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i,
+                                message: 'Неверный Формат Email !'
                             }
                         })}
                         />
                     </div>
-                    {errors?.login && <p className='form__error'>{errors?.login.message}</p>}
+                    {errors?.Email && <p className='form__error'>{errors?.Email.message}</p>}
                     <div className="form__label">
                     <label htmlFor="Password" className="form-label">Пароль</label>
                     </div>

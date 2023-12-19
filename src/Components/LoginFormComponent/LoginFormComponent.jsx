@@ -29,23 +29,23 @@ export const LoginFormComponent =()=>{
             <div className="form__wrapper">
                 <div className="form__title">Войти</div>
                 <div className="form__label">
-                <label htmlFor="Login" className="form-label">Логин</label>
+                <label htmlFor="Login" className="form-label">Email</label>
                 </div>
                 <div className="form__input">
-                    <input 
-                    type="text" 
-                     className="form-input" 
-                     placeholder='Логин' 
-                     {...register('login',{
-                        required: 'Поле обязательное !',
-                        pattern:{
-                            value: /^[а-яА-ЯёЁa-zA-Z0-9]+$/,
-                            message: 'Должны быть только буквы и цифры !'
-                        }
-                     })}
-                     />
-                </div>
-                {errors?.login && <p className='form__error'>{errors?.login.message}</p>}
+                        <input 
+                        type="text" 
+                        className="form-input" 
+                        placeholder='Email' 
+                        {...register('Email',{
+                            required: 'Поле обезательное !',
+                            pattern:{
+                                value:/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i,
+                                message: 'Неверный Формат Email !'
+                            }
+                        })}
+                        />
+                    </div>
+                    {errors?.Email && <p className='form__error'>{errors?.Email.message}</p>}
                 <div className="form__label">
                 <label htmlFor="password" className="form-label">Пароль</label>
                 </div>

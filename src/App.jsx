@@ -4,9 +4,12 @@ import { AutchLayout } from './Components/Layouts/AuthLayout/AuthLayout'
 import { Mainlayout } from './Components/Layouts/MainLayout/Mainlayout'
 import { LoginPage } from './Pages/LoginPage'
 import { HomePage } from './Pages/HomePage'
-import { RegustrationPage } from './Pages/RegistrationPage'
+import { RegistrationPage } from './Pages/RegistrationPage'
+
+
 
 import './App.css'
+
 
 
 function App() {
@@ -17,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AutchLayout />}>
           <Route index element={<LoginPage />} />
-          <Route path='/Registration' element={<RegustrationPage />} />
+          <Route path='/Registration' element={<RegistrationPage/>} />
         </Route>
         <Route path="/main" element={<Mainlayout />}>
           <Route index element={<HomePage />} />
