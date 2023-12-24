@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom'
-export const ConfirmationFormComponent = ({stap})=>{
+export const CheckLoginFormComponent = ({stap})=>{
     const navigate = useNavigate()
     const{
         register,
@@ -16,6 +16,7 @@ export const ConfirmationFormComponent = ({stap})=>{
         reset()
         navigate('/')
         stap(1)
+
 
     }
     return(

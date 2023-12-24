@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
 
-export const LoginFormComponent =()=>{
+export const LoginFormComponent =({stap})=>{
     const login = useInput('') 
     const password = useInput('') 
     const {
@@ -20,6 +20,7 @@ export const LoginFormComponent =()=>{
          console.log(str)
          console.log(jsonData)
          reset()
+         stap(2)
  }
 
 
